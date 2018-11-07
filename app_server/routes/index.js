@@ -4,7 +4,7 @@ var ctrlFood = require('../controllers/food');
 
 /* GET pages. */
 router.get('/', ctrlFood.home_list);
-router.get('/food/delete/:id', ctrlFood.delete_food);
+router.get('/food/delete/:id', ctrlFood.remove_food);
 router.get('/create_edit/:id', ctrlFood.create);
 router.get('create_edit/:id', ctrlFood.load_edit_data);
 
