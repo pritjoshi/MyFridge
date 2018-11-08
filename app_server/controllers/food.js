@@ -14,7 +14,7 @@ var render_homepage = function(req, res, responseBody){
         message = "No Food Items found";
       }
     }
-    res.render('food-list', {
+    res.render('myfridge', {
       title: 'List Of Food',
       foods: responseBody,
       message: message
@@ -44,7 +44,7 @@ module.exports.home_list = function(req, res){
     );
   };
 
-  module.exports.delete_food = function(req, res){
+  module.exports.remove_food = function(req, res){
     var requestOptions, path;
     path = '/api/food/' + req.params.id;
     requestOptions = {
@@ -69,7 +69,7 @@ module.exports.home_list = function(req, res){
   }
 
   module.exports.create = function(req, res){
-    res.render('food-create-edit', {
+    res.render('create', {
       title: 'Create Food',
       create: true
     });
@@ -97,7 +97,7 @@ module.exports.home_list = function(req, res){
           if (data[0].expiry){
             data[0].expiry = formatDate(data[0].expiry);
           }
-          res.render('food-create-edit', {
+          res.render('create', {
             title: 'Edit Food',
             create: false,
             food: data[0]

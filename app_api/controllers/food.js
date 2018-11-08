@@ -14,7 +14,7 @@ module.exports.get_food = function(req, res) {
       })
   };
 
-// Get Food by ID
+// Gets Food by ID
 module.exports.get_food_By_Id = function(req, res) {
     if (req.params.id) {
         
@@ -27,7 +27,7 @@ module.exports.get_food_By_Id = function(req, res) {
             return sendJSONresponse(res, 200, food);
           })
         
-    }else{
+    }else {
         
         sendJSONresponse(res, 404, {"message": "Id Not Found."})
     }
@@ -71,7 +71,7 @@ module.exports.post_food = function(req, res){
 
 
 
-// Delete food
+// Deletes food
 
 module.exports.delete_food = function(req, res) {
     if (req.params.id) {
@@ -125,7 +125,7 @@ module.exports.delete_food = function(req, res) {
 
 
 
-// Put
+// Puts food
 
 
 module.exports.put_food = function(req, res) {
